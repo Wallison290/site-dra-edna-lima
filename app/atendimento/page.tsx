@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { FinalCta } from "@/components/FinalCta";
 import { PageShell } from "@/components/PageShell";
+import { SectionDivider } from "@/components/SectionDivider";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TrackedLink } from "@/components/TrackedLink";
 import { whatsappLinks } from "@/lib/site";
@@ -47,6 +48,8 @@ export default function AtendimentoPage() {
         </div>
       </section>
 
+      <SectionDivider variant="straight" from="background-alt" to="background" />
+
       <section className="section">
         <div className="container">
           <SectionHeading
@@ -54,7 +57,7 @@ export default function AtendimentoPage() {
             title="Cada couro cabeludo apresenta uma história diferente."
             description="A avaliação não parte de uma resposta pronta. Ela considera a queixa, o histórico e os sinais observados."
           />
-          <div className="concern-grid">
+          <div className="concern-grid reveal">
             {[
               ["01", "Queda de cabelo", "Perda percebida no banho, ao pentear ou ao longo do dia."],
               ["02", "Calvície", "Redução progressiva de densidade e volume capilar."],
@@ -70,13 +73,15 @@ export default function AtendimentoPage() {
         </div>
       </section>
 
+      <SectionDivider variant="straight" from="background" to="background-alt" />
+
       <section className="section section-alt">
         <div className="container content-narrow">
           <SectionHeading
             eyebrow="Processo de cuidado"
             title="Avaliar, orientar e acompanhar."
           />
-          <div className="steps">
+          <div className="steps reveal">
             <article>
               <span>01</span>
               <div>
@@ -130,6 +135,8 @@ export default function AtendimentoPage() {
         </div>
       </section>
 
+      <SectionDivider variant="wave" from="background-alt" to="background" />
+
       <section className="section">
         <div className="container faq-grid">
           <SectionHeading
@@ -137,7 +144,7 @@ export default function AtendimentoPage() {
             title="O que você precisa saber."
             description="A equipe pode orientar sobre horários e disponibilidade pelo WhatsApp."
           />
-          <div className="faq-list">
+          <div className="faq-list reveal">
             <details>
               <summary>Preciso ter um diagnóstico antes de agendar?</summary>
               <p>
@@ -165,6 +172,8 @@ export default function AtendimentoPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider variant="curve" from="background" to="primary" />
 
       <FinalCta />
     </PageShell>

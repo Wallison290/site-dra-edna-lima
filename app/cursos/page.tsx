@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageShell } from "@/components/PageShell";
+import { SectionDivider } from "@/components/SectionDivider";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TrackedLink } from "@/components/TrackedLink";
 import { whatsappLinks } from "@/lib/site";
@@ -46,6 +47,8 @@ export default function CursosPage() {
         </div>
       </section>
 
+      <SectionDivider variant="straight" from="background-alt" to="background" />
+
       <section className="section">
         <div className="container">
           <SectionHeading
@@ -53,7 +56,7 @@ export default function CursosPage() {
             title="Escolha o próximo passo da sua formação."
             description="Links de checkout e datas de novas turmas serão atualizados assim que confirmados."
           />
-          <div className="course-grid">
+          <div className="course-grid reveal">
             <article className="course-card">
               <span>MasterClass · Instituto Elos</span>
               <h2>REGENERA</h2>
@@ -104,6 +107,8 @@ export default function CursosPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider variant="straight" from="background" to="background-alt" />
 
       <section className="section section-alt">
         <div className="container content-narrow">

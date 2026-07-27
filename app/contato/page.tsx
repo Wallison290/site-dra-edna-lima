@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
+import { SectionDivider } from "@/components/SectionDivider";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TrackedLink } from "@/components/TrackedLink";
 import { site, whatsappLinks } from "@/lib/site";
@@ -33,6 +34,8 @@ export default function ContatoPage() {
         </div>
       </section>
 
+      <SectionDivider variant="straight" from="background-alt" to="background" />
+
       <section className="section">
         <div className="container location-grid">
           <div>
@@ -41,7 +44,7 @@ export default function ContatoPage() {
               title="Atendimento presencial na Torre."
               description="A estrutura possui entrada e estacionamento acessíveis para cadeirantes."
             />
-            <div className="contact-panel">
+            <div className="contact-panel reveal">
               <article>
                 <small>Endereço</small>
                 <address>{site.address}</address>
@@ -85,7 +88,7 @@ export default function ContatoPage() {
               </a>
             </div>
           </div>
-          <div className="map-card">
+          <div className="map-card reveal reveal-delay-1">
             <span className="map-line map-line-one" />
             <span className="map-line map-line-two" />
             <span className="map-line map-line-three" />

@@ -5,9 +5,6 @@ import { TrackedLink } from "./TrackedLink";
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <div className="top-note">
-        Atendimento presencial em João Pessoa · Segunda a sexta, das 8h às 18h
-      </div>
       <div className="header-inner">
         <Link className="brand" href="/" aria-label="Dra. Edna Lima — início">
           <span className="monogram" aria-hidden="true">

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Counter } from "@/components/Counter";
 import { FinalCta } from "@/components/FinalCta";
 import { PageShell } from "@/components/PageShell";
+import { SectionDivider } from "@/components/SectionDivider";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
@@ -40,9 +42,11 @@ export default function DraEdnaPage() {
         </div>
       </section>
 
+      <SectionDivider variant="straight" from="background-alt" to="background" />
+
       <section className="section">
         <div className="container editorial-grid">
-          <div className="editorial-image">
+          <div className="editorial-image reveal">
             <Image
               unoptimized
               src="/images/dra-edna-hero.png"
@@ -52,7 +56,7 @@ export default function DraEdnaPage() {
             />
             <span className="image-caption">Dra. Edna Lima</span>
           </div>
-          <div className="editorial-copy prose">
+          <div className="editorial-copy prose reveal reveal-delay-1">
             <SectionHeading
               eyebrow="Sobre"
               title="Uma carreira construída entre o cuidado e a formação."
@@ -78,6 +82,8 @@ export default function DraEdnaPage() {
         </div>
       </section>
 
+      <SectionDivider variant="straight" from="background" to="background-alt" />
+
       <section className="section section-alt">
         <div className="container">
           <SectionHeading
@@ -85,17 +91,17 @@ export default function DraEdnaPage() {
             title="Autoridade sustentada por prática, estudo e docência."
             align="center"
           />
-          <div className="fact-grid">
+          <div className="fact-grid reveal">
             <article>
               <strong>UFPB</strong>
               <span>Formação em Fisioterapia</span>
             </article>
             <article>
-              <strong>20+</strong>
+              <Counter to={20} suffix="+" />
               <span>Anos de atuação clínica e educacional</span>
             </article>
             <article>
-              <strong>2013</strong>
+              <Counter to={2013} />
               <span>Início da especialização em Tricologia</span>
             </article>
             <article>
@@ -105,6 +111,8 @@ export default function DraEdnaPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider variant="curve" from="background-alt" to="primary" />
 
       <FinalCta />
     </PageShell>

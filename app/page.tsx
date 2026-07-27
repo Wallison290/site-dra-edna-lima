@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Counter } from "@/components/Counter";
 import { FinalCta } from "@/components/FinalCta";
 import { PageShell } from "@/components/PageShell";
+import { SectionDivider } from "@/components/SectionDivider";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TrackedLink } from "@/components/TrackedLink";
 import { site, whatsappLinks } from "@/lib/site";
@@ -113,7 +115,12 @@ export default function Home() {
           </div>
 
           <div className="hero-visual" aria-label="Dra. Edna Lima">
-            <span className="hero-frame" aria-hidden="true" />
+            <span
+              className="hero-frame"
+              aria-hidden="true"
+              data-parallax
+              data-parallax-speed="-0.06"
+            />
             <Image
               unoptimized
               src="/images/dra-edna-hero.png"
@@ -121,6 +128,8 @@ export default function Home() {
               width={1098}
               height={1433}
               priority
+              data-parallax
+              data-parallax-speed="0.1"
             />
             <div className="hero-signature">
               <strong>Dra. Edna Lima</strong>
@@ -130,18 +139,20 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider variant="curve" from="background" to="primary" />
+
       <section className="trust-strip" aria-label="Indicadores de confiança">
-        <div className="container trust-grid">
+        <div className="container trust-grid reveal">
           <div>
-            <strong>20+</strong>
+            <Counter to={20} suffix="+" />
             <span>anos de atuação</span>
           </div>
           <div>
-            <strong>2013</strong>
+            <Counter to={2013} />
             <span>especialização em tricologia</span>
           </div>
           <div>
-            <strong>4,7</strong>
+            <Counter to={4.7} decimals={1} />
             <span>avaliação no Google</span>
           </div>
           <div>
@@ -151,6 +162,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider variant="wave" from="primary" to="background" />
+
       <section className="section" id="atendimento">
         <div className="container">
           <SectionHeading
@@ -158,7 +171,7 @@ export default function Home() {
             title="Queixas capilares merecem uma análise individualizada."
             description="A percepção de queda, redução de volume ou alterações no couro cabeludo não deve ser tratada de forma genérica. O primeiro passo é compreender o seu caso."
           />
-          <div className="concern-grid">
+          <div className="concern-grid reveal">
             {concerns.map((item) => (
               <article className="lined-card" key={item.number}>
                 <span>{item.number}</span>
@@ -181,9 +194,11 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider variant="straight" from="background" to="background-alt" />
+
       <section className="section section-alt">
         <div className="container editorial-grid">
-          <div className="editorial-image">
+          <div className="editorial-image reveal">
             <Image
               unoptimized
               src="/images/dra-edna-sobre.png"
@@ -193,7 +208,7 @@ export default function Home() {
             />
             <span className="image-caption">Autoridade clínica e educacional</span>
           </div>
-          <div className="editorial-copy">
+          <div className="editorial-copy reveal reveal-delay-1">
             <span className="eyebrow">Sobre a Dra. Edna Lima</span>
             <h2>Mais de 20 anos de experiência clínica e educacional.</h2>
             <p>
@@ -218,6 +233,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SectionDivider variant="straight" from="background-alt" to="background" />
 
       <section className="section">
         <div className="container process-grid">
@@ -248,7 +265,7 @@ export default function Home() {
               Agendar avaliação pelo WhatsApp
             </TrackedLink>
           </div>
-          <div className="process-image">
+          <div className="process-image reveal reveal-delay-1">
             <Image
               unoptimized
               src="/images/dra-edna-avaliacao-capilar.png"
@@ -260,6 +277,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider variant="straight" from="background" to="background" />
+
       <section className="section proof-section">
         <div className="container">
           <SectionHeading
@@ -267,14 +286,14 @@ export default function Home() {
             title="Experiências que reforçam atenção, cuidado e presença."
             align="center"
           />
-          <div className="rating">
-            <strong>4,7</strong>
+          <div className="rating reveal">
+            <Counter to={4.7} decimals={1} />
             <div>
               <span aria-label="5 estrelas">★★★★★</span>
               <small>Avaliação da clínica no Google</small>
             </div>
           </div>
-          <div className="testimonial-grid">
+          <div className="testimonial-grid reveal">
             <blockquote>
               <p>“Excelente espaço e profissionais super atenciosos.”</p>
               <cite>Avaliação publicada no Google</cite>
@@ -305,9 +324,11 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider variant="curve" from="background" to="primary" />
+
       <section className="section institute-section" id="instituto">
         <div className="container institute-grid">
-          <div className="institute-visual">
+          <div className="institute-visual reveal">
             <Image
               unoptimized
               src="/images/instituto-elos-formacao.png"
@@ -316,7 +337,7 @@ export default function Home() {
               height={1444}
             />
           </div>
-          <div>
+          <div className="reveal reveal-delay-1">
             <span className="eyebrow eyebrow-light">Instituto Elos</span>
             <h2>Formação profissional conectada à prática clínica.</h2>
             <p>
@@ -325,7 +346,7 @@ export default function Home() {
               ampliar seu raciocínio clínico em tricologia e protocolos
               capilares.
             </p>
-            <div className="course-mini-grid">
+            <div className="course-mini-grid reveal reveal-delay-2">
               <article>
                 <span>MasterClass</span>
                 <h3>REGENERA</h3>
@@ -361,6 +382,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider variant="wave" from="primary" to="background" />
+
       <section className="section">
         <div className="container location-grid">
           <div>
@@ -369,7 +392,7 @@ export default function Home() {
               title="Atendimento presencial com localização acessível."
               description="Um espaço dedicado ao cuidado, com entrada e estacionamento acessíveis para cadeirantes."
             />
-            <div className="location-details">
+            <div className="location-details reveal">
               <div>
                 <small>Endereço</small>
                 <strong>{site.address}</strong>
@@ -403,7 +426,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="map-card">
+          <div className="map-card reveal reveal-delay-1">
             <span className="map-line map-line-one" />
             <span className="map-line map-line-two" />
             <span className="map-line map-line-three" />
@@ -417,6 +440,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider variant="straight" from="background" to="background-alt" />
+
       <section className="section section-alt" id="faq">
         <div className="container faq-grid">
           <SectionHeading
@@ -424,7 +449,7 @@ export default function Home() {
             title="Informações antes de dar o próximo passo."
             description="Se ainda houver alguma dúvida, a equipe pode orientar você pelo WhatsApp."
           />
-          <div className="faq-list">
+          <div className="faq-list reveal">
             {faqs.map((faq) => (
               <details key={faq.question}>
                 <summary>{faq.question}</summary>
@@ -443,6 +468,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SectionDivider variant="curve" from="background-alt" to="primary" />
 
       <FinalCta />
     </PageShell>

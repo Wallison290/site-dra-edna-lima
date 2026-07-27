@@ -4,7 +4,7 @@ import { TrackedLink } from "./TrackedLink";
 export function FinalCta() {
   return (
     <section className="final-cta">
-      <div className="container final-cta-inner">
+      <div className="container final-cta-inner reveal">
         <span className="eyebrow eyebrow-light">Atendimento em João Pessoa</span>
         <h2>Dê o primeiro passo para compreender sua saúde capilar.</h2>
         <p>

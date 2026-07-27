@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageShell } from "@/components/PageShell";
+import { SectionDivider } from "@/components/SectionDivider";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TrackedLink } from "@/components/TrackedLink";
 import { whatsappLinks } from "@/lib/site";
@@ -53,6 +54,8 @@ export default function InstitutoPage() {
         </div>
       </section>
 
+      <SectionDivider variant="straight" from="background-alt" to="background" />
+
       <section className="section">
         <div className="container">
           <SectionHeading
@@ -61,7 +64,7 @@ export default function InstitutoPage() {
             description="O Instituto Elos é o braço educacional coordenado pela Dra. Edna Lima, reunindo conteúdo técnico, raciocínio clínico e experiências práticas."
             align="center"
           />
-          <div className="fact-grid">
+          <div className="fact-grid reveal">
             <article>
               <strong>Online</strong>
               <span>Cursos para profissionais de todo o Brasil</span>
@@ -82,9 +85,11 @@ export default function InstitutoPage() {
         </div>
       </section>
 
+      <SectionDivider variant="straight" from="background" to="background-alt" />
+
       <section className="section section-alt">
         <div className="container editorial-grid">
-          <div className="editorial-image">
+          <div className="editorial-image reveal">
             <Image
               unoptimized
               src="/images/instituto-elos-turma.png"
@@ -94,7 +99,7 @@ export default function InstitutoPage() {
             />
             <span className="image-caption">Formação e imersão profissional</span>
           </div>
-          <div className="editorial-copy">
+          <div className="editorial-copy reveal reveal-delay-1">
             <SectionHeading
               eyebrow="Para quem é"
               title="Profissionais que desejam tomar decisões clínicas com mais clareza."
@@ -116,8 +121,10 @@ export default function InstitutoPage() {
         </div>
       </section>
 
+      <SectionDivider variant="curve" from="background-alt" to="primary" />
+
       <section className="final-cta">
-        <div className="container final-cta-inner">
+        <div className="container final-cta-inner reveal">
           <span className="eyebrow eyebrow-light">Instituto Elos</span>
           <h2>Receba informações sobre cursos, turmas e próximas imersões.</h2>
           <p>

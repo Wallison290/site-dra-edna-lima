@@ -74,6 +74,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important;}`}</style>
+        </noscript>
         {children}
         <script
           type="application/ld+json"
