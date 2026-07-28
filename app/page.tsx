@@ -51,6 +51,39 @@ const steps = [
   },
 ];
 
+const services = [
+  {
+    number: "01",
+    title: "Avaliação Tricológica",
+    text: "Escuta da queixa, histórico e observação cuidadosa do couro cabeludo, presencialmente na Torre, em João Pessoa.",
+  },
+  {
+    number: "02",
+    title: "Diagnóstico de Calvície",
+    text: "Investigação individualizada para homens e mulheres que percebem redução de densidade ou volume capilar.",
+  },
+  {
+    number: "03",
+    title: "Acompanhamento Clínico",
+    text: "Orientação contínua para observar a evolução do quadro e ajustar a conduta quando necessário.",
+  },
+  {
+    number: "04",
+    title: "Orientação do Couro Cabeludo",
+    text: "Atenção a sinais, desconfortos e alterações que exigem análise profissional.",
+  },
+  {
+    number: "05",
+    title: "Formação Profissional",
+    text: "Instituto Elos: cursos e MasterClasses em tricologia e protocolos capilares para profissionais da saúde e estética.",
+  },
+  {
+    number: "06",
+    title: "Cursos e MasterClasses",
+    text: "Raciocínio clínico, exames, recursos e casos aplicados, em turmas online e imersões presenciais.",
+  },
+];
+
 const faqs = [
   {
     question: "Como funciona a avaliação capilar?",
@@ -190,6 +223,28 @@ export default function Home() {
             >
               Quero avaliar meu caso
             </TrackedLink>
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider variant="straight" from="background" to="background" />
+
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="O que fazemos"
+            title="Cuidado clínico e formação profissional em um só lugar."
+            description="Do atendimento individual à formação continuada de outros profissionais, cada frente é conduzida pela Dra. Edna Lima."
+            align="center"
+          />
+          <div className="concern-grid reveal">
+            {services.map((item) => (
+              <article className="lined-card" key={item.number}>
+                <span>{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
