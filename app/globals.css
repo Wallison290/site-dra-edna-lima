@@ -1459,6 +1459,54 @@ p {
   transform: translateY(var(--parallax-y, 0px));
 }
 
+/* Depth reveal (brecha com profundidade) */
+.depth-reveal {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.depth-reveal img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 140%;
+  object-fit: cover;
+  transform: translateY(calc(-14.29% + var(--parallax-y, 0px)));
+  will-change: transform;
+}
+
+.depth-reveal::before,
+.depth-reveal::after {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 20%;
+  content: "";
+  pointer-events: none;
+}
+
+.depth-reveal::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--background), transparent);
+}
+
+.depth-reveal::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--background), transparent);
+}
+
+@media (max-width: 780px) {
+  .depth-reveal {
+    height: 46vh;
+  }
+}
+
 /* Micro-interactions */
 .button {
   transition:

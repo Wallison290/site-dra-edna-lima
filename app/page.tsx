@@ -384,6 +384,18 @@ export default function Home() {
 
       <SectionDivider variant="curve" from="primary" to="background" />
 
+      <div className="depth-reveal" aria-hidden="true">
+        <img
+          src="/images/Efeito-Brecha.png"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          data-parallax
+          data-parallax-fill
+          data-parallax-speed="0.18"
+        />
+      </div>
+
       <section className="section">
         <div className="container location-grid">
           <div>

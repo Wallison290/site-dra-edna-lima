@@ -46,7 +46,16 @@ export function ScrollFx() {
         const rect = el.getBoundingClientRect();
         const center = rect.top + rect.height / 2;
         const offset = (center - viewportH / 2) * speed;
-        const clamped = Math.max(-40, Math.min(40, offset));
+        // Fill images (oversized backdrop inside a clipped section) derive their
+        // safe travel distance from actual rendered sizes so they never reveal a
+        // gap at any viewport height, instead of relying on a fixed px clamp.
+        const maxRange = el.hasAttribute("data-parallax-fill")
+          ? Math.max(
+              0,
+              (el.offsetHeight - (el.parentElement?.offsetHeight ?? el.offsetHeight)) / 2,
+            )
+          : 40;
+        const clamped = Math.max(-maxRange, Math.min(maxRange, offset));
         el.style.setProperty("--parallax-y", `${clamped.toFixed(2)}px`);
       });
       ticking = false;
