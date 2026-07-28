@@ -1,5 +1,5 @@
 type DividerTone = "background" | "background-alt" | "primary";
-type DividerVariant = "curve" | "wave" | "straight";
+type DividerVariant = "curve" | "straight";
 
 const toneVar: Record<DividerTone, string> = {
   background: "var(--background)",
@@ -7,9 +7,8 @@ const toneVar: Record<DividerTone, string> = {
   primary: "var(--primary)",
 };
 
-const paths: Record<"curve" | "wave", string> = {
+const paths: Record<"curve", string> = {
   curve: "M0,88 C420,4 1020,4 1440,88 L1440,120 L0,120 Z",
-  wave: "M0,58 C180,110 360,6 540,58 C720,110 900,6 1080,58 C1260,110 1350,86 1440,58 L1440,120 L0,120 Z",
 };
 
 export function SectionDivider({

@@ -162,7 +162,7 @@ export default function Home() {
         </div>
       </section>
 
-      <SectionDivider variant="wave" from="primary" to="background" />
+      <SectionDivider variant="curve" from="primary" to="background" />
 
       <section className="section" id="atendimento">
         <div className="container">
@@ -382,7 +382,7 @@ export default function Home() {
         </div>
       </section>
 
-      <SectionDivider variant="wave" from="primary" to="background" />
+      <SectionDivider variant="curve" from="primary" to="background" />
 
       <section className="section">
         <div className="container location-grid">

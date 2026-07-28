@@ -135,7 +135,7 @@ export default function AtendimentoPage() {
         </div>
       </section>
 
-      <SectionDivider variant="wave" from="background-alt" to="background" />
+      <SectionDivider variant="straight" from="background-alt" to="background" />
 
       <section className="section">
         <div className="container faq-grid">
